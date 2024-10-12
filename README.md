@@ -1,2 +1,2 @@
 # Javascript
-My Javascript projects
+My Javascript project - Guess a Number
