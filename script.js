@@ -16,23 +16,27 @@ function validateguess(num){
     if(isNaN(num)){
         result.innerHTML="Enter valid input"
     }
-    if(arr.length==3){
-        arr=[]
-        prev.innerHTML=''
-        result.innerHTML='Game Over'
-    }
     else if(num>0 && num<=10){
         arr.push(num)
-        count=3-arr.length
-        prev.innerHTML+=`${num} `
-        rem.innerHTML=3-arr.length
-        if(random==num){
-            result.innerHTML="Guesses correct - You won"
-
+        if(arr.length==3){
+            arr=[]
+            prev.innerHTML=''
+            rem.innerHTML=3
+            result.innerHTML='Game Over- Start New Game'
         }
         else{
+        if(random==num){
+            result.innerHTML="Guesses correct - You won Start New Game"
+            arr=[]
+            prev.innerHTML=''
+            rem.innerHTML=3
+        }
+        else{
+            prev.innerHTML+=`${num} `
+            rem.innerHTML=3-arr.length
             result.innerHTML="Try again"
         }
+    }
     }
     else{
         result.innerHTML="Enter numbers between 1 and 10"
